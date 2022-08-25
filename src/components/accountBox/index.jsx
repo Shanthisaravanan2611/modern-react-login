@@ -5,7 +5,14 @@ import { motion } from "framer-motion";
 import { AccountContext } from "./accountContext";
 import { SignupForm } from "./signupForm";
 
-const BoxContainer = styled.div`
+
+export function AccountBox(props)
+
+{
+  const passvalue=props.bcolor;
+
+
+  const BoxContainer = styled.div`
   width: 280px;
   min-height: 550px;
   display: flex;
@@ -25,6 +32,7 @@ const TopContainer = styled.div`
   justify-content: flex-end;
   padding: 0 1.8em;
   padding-bottom: 5em;
+
 `;
 
 const BackDrop = styled(motion.div)`
@@ -37,12 +45,13 @@ const BackDrop = styled(motion.div)`
   transform: rotate(60deg);
   top: -290px;
   left: -70px;
-  background: rgb(241, 196, 15);
+  background-color: ${passvalue};
+ /* background: rgb(241, 196, 15);
   background: linear-gradient(
     58deg,
     rgba(241, 196, 15, 1) 20%,
     rgba(243, 172, 18, 1) 100%
-  );
+  );*/
 `;
 
 const HeaderContainer = styled.div`
@@ -76,6 +85,8 @@ const InnerContainer = styled.div`
   padding: 0 1.8em;
 `;
 
+
+
 const backdropVariants = {
   expanded: {
     width: "233%",
@@ -97,7 +108,8 @@ const expandingTransition = {
   stiffness: 30,
 };
 
-export function AccountBox(props) {
+
+ 
   const [isExpanded, setExpanded] = useState(false);
   const [active, setActive] = useState("signin");
 
@@ -156,4 +168,8 @@ export function AccountBox(props) {
       </BoxContainer>
     </AccountContext.Provider>
   );
+  
+        
+      
+;
 }

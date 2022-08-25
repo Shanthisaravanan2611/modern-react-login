@@ -1,7 +1,10 @@
 import "./App.css";
 import styled from "styled-components";
-import { AccountBox } from "./components/accountBox";
+import {AccountBox} from "./components/accountBox";
+import React from 'react';
+import {Button} from "./components/accountBox/common";
 
+const backcolor = "green";
 const AppContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -9,14 +12,36 @@ const AppContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
 `;
 
-function App() {
-  return (
+export function App() {
+
+   return (
+    
     <AppContainer>
-      <AccountBox />
+      <AccountBox bcolor={backcolor}/>
+      <Button color={backcolor}/>
+     
+     
+      
     </AppContainer>
+    
   );
+ 
 }
 
-export default App;
+/*
+class App 
+{
+  render()
+  {
+    return(
+      <AppContainer>
+      <AccountBox bcolor={"red"}>
+      </AccountBox>
+      </AppContainer>
+
+    );
+  }
+}*/export default App;

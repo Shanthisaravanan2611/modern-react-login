@@ -5,15 +5,20 @@ import {
   FormContainer,
   Input,
   MutedLink,
-  SubmitButton,
-} from "./common";
-import { Marginer } from "../marginer";
-import { AccountContext } from "./accountContext";
+  Button,
+  } from "./common";
+  
+  import { Marginer } from "../marginer";
+  import { AccountContext } from "./accountContext";
+
+  
 
 export function LoginForm(props) {
+  
   const { switchToSignup } = useContext(AccountContext);
-
+ 
   return (
+    
     <BoxContainer>
       <FormContainer>
         <Input type="email" placeholder="Email" />
@@ -22,10 +27,10 @@ export function LoginForm(props) {
       <Marginer direction="vertical" margin={10} />
       <MutedLink href="#">Forget your password?</MutedLink>
       <Marginer direction="vertical" margin="1.6em" />
-      <SubmitButton type="submit">Signin</SubmitButton>
+      <Button  type="submit">Signin</Button>
       <Marginer direction="vertical" margin="1em" />
       <MutedLink href="#">
-        Don't have an accoun?{" "}
+        Don't have an account?{" "}
         <BoldLink href="#" onClick={switchToSignup}>
           Signup
         </BoldLink>
