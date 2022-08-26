@@ -1,47 +1,26 @@
-import "./App.css";
-import styled from "styled-components";
-import {AccountBox} from "./components/accountBox";
 import React from 'react';
-import {Button} from "./components/accountBox/common";
+import {
+   BrowserRouter as Router,
+   Route,
+   Switch,
+} 
+from "react-router-dom";
+import Homescreen from "./Homescreen";
+import Loginpage from "./Loginpage";
 
-const backcolor = "green";
-const AppContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+import "./App.css";
 
-`;
-
-export function App() {
-
-   return (
-    
-    <AppContainer>
-      <AccountBox bcolor={backcolor}/>
-      <Button color={backcolor}/>
-     
-     
-      
-    </AppContainer>
-    
-  );
- 
-}
-
-/*
-class App 
-{
-  render()
-  {
-    return(
-      <AppContainer>
-      <AccountBox bcolor={"red"}>
-      </AccountBox>
-      </AppContainer>
-
-    );
+  function App(){
+   return(
+      <div className='App'>
+    <Router>
+      <Switch>
+         <Route exact path="/" component={Loginpage}/>
+         <Route exact path="/homescreen" component={Homescreen}/>
+       
+      </Switch>
+    </Router>
+    </div>
+   );
   }
-}*/export default App;
+  export default App;
